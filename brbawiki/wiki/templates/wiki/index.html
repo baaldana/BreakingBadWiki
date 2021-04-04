@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BrBa Wiki Homepage</title>
+    </head>
+    <body>
+        <p>Esta es mi primera vista con HTML</p>
+        {% if test_var %}
+            <p>{{test_var}}.</p>
+        {% else %}
+            <p>No encontré test_var en context.</p>
+        {% endif %}     
+    </body>
+</html>
