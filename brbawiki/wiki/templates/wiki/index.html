@@ -1,14 +1,31 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>BrBa Wiki Homepage</title>
+        <title>BrBa Wiki</title>
     </head>
     <body>
-        <p>Esta es mi primera vista con HTML</p>
-        {% if test_var %}
-            <p>{{test_var}}.</p>
-        {% else %}
-            <p>No encontré test_var en context.</p>
-        {% endif %}     
+        <h1>Breaking Bad Seasons</h1>
+        <ul>
+            {% for season in brba_seasons %}
+            <li>Season {{season}}.</li>
+                {% for episode in brba_episodes %}
+                    {% if episode.season == season %}
+                    <li><a href="episodes/{{ episode.episode_id }}/">Episode {{episode.episode}}: {{episode.title}}.</a></li>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </ul>
+        
+        <h1>Better Call Saul Seasons</h1>
+        <ul>
+        {% for season in bcs_seasons %}
+            <li>Season {{season}}.</li>
+            {% for episode in bcs_episodes %}
+                {% if episode.season == season %}
+                <li><a href="episodes/{{ episode.episode_id }}/">Episode {{episode.episode}}: {{episode.title}}.</a></li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        </ul>
     </body>
 </html>

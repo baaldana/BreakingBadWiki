@@ -9,7 +9,29 @@ import json
 api_url = 'https://tarea-1-breaking-bad.herokuapp.com/api/'
 
 def index(request):
-    context = {'test_var':'TEST VARIABLE FROM CONTEXT'}
+    url = f'{api_url}episodes/'
+    response = requests.get(url).json()
+    brba_episodes = []
+    brba_seasons = []
+    bcs_episodes = []
+    bcs_seasons = []
+
+
+    for episode in response:
+        if episode['series'] == "Breaking Bad":
+            brba_episodes.append(episode)
+            if episode['season'] not in brba_seasons:
+                brba_seasons.append(episode['season'])
+        else:
+            bcs_episodes.append(episode)
+            if episode['season'] not in bcs_seasons:
+                bcs_seasons.append(episode['season'])
+    context = {
+        "brba_episodes": brba_episodes,
+        "brba_seasons": brba_seasons,
+        "bcs_episodes": bcs_episodes,
+        "bcs_seasons": bcs_seasons
+        }
     return render(request, 'wiki/index.html', context)
 
 def episode(request, question_id):
@@ -21,11 +43,19 @@ def episode(request, question_id):
 def episodes(request):
     url = f'{api_url}episodes/'
     response = requests.get(url).json()
-    context = {"episodes": response}
+    brba_episodes = []
+    bcs_episodes = []
+    for episode in response:
+        if episode['series'] == "Breaking Bad":
+            brba_episodes.append(episode)
+        else:
+            bcs_episodes.append(episode)
+    context = {"brba_episodes": brba_episodes, "bcs_episodes": bcs_episodes}
     return render(request, 'wiki/episodes.html', context)
 
 def character(request, question_id):
-    url = f'{api_url}characters/'
+    url = f'{api_url}characters/{question_id}/'
+    print(url)
     response = requests.get(url).json()
     context = {"character": response}
     return render(request, 'wiki/character.html', context)
