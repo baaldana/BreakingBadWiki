@@ -7,25 +7,15 @@
         <h1>Breaking Bad Seasons</h1>
         <ul>
             {% for season in brba_seasons %}
-            <li>Season {{season}}.</li>
-                {% for episode in brba_episodes %}
-                    {% if episode.season == season %}
-                    <li><a href="episodes/{{ episode.episode_id }}/">Episode {{episode.episode}}: {{episode.title}}.</a></li>
-                    {% endif %}
-                {% endfor %}
+                <li><a href="/brba-seasons/{{ season }}/">Season {{season}}.</a></li>
             {% endfor %}
         </ul>
         
         <h1>Better Call Saul Seasons</h1>
         <ul>
-        {% for season in bcs_seasons %}
-            <li>Season {{season}}.</li>
-            {% for episode in bcs_episodes %}
-                {% if episode.season == season %}
-                <li><a href="episodes/{{ episode.episode_id }}/">Episode {{episode.episode}}: {{episode.title}}.</a></li>
-                {% endif %}
+            {% for season in bcs_seasons %}
+                <li><a href="/bcs-seasons/{{ season }}/">Season {{season}}.</a></li>
             {% endfor %}
-        {% endfor %}
         </ul>
     </body>
 </html>

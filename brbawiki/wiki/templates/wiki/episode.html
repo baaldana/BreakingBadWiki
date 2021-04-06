@@ -1,6 +1,10 @@
 <html>
-    <title>BrBa Episodes</title>
-    <body>
-        <p>{{response}}</p>
-    </body>
+    <title>Episode </title>
+    <h2>S{{episode.season}}E{{episode.episode}} | {{episode.title}}</h2>
+    <p>Air Date: {{episode.air_date}}</p>
+    <ul>
+        {% for character in episode.characters %}
+            <li><a href='/characters/{{ character.1 }}'>{{character.0}}</a></li>
+        {% endfor %}
+    </ul>
 </html>
