@@ -1,13 +1,34 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django import forms
 import requests
 import json
+import importlib
 
+# Auxiliary functions
+
+def array_to_string(array):
+    string = ""
+    if not isinstance(array, type(list())):
+        return array + "."
+    for index in range(len(array)):
+            if index + 1 != len(array):
+                print(array[index])
+                string += array[index] + ", "
+            else:
+                print(array[index])
+                string += array[index] + "."
+    
+    return string
 
 # Create your views here.
 
+
+
 api_url = 'https://tarea-1-breaking-bad.herokuapp.com/api/'
 
+def character_search(request):
+    pass
 
 def index(request):
     url_brba = f'{api_url}episodes?series=Breaking+Bad'
@@ -69,7 +90,7 @@ def episode(request, question_id):
     episode = requests.get(url_episode).json()[0]
     
     episode['air_date'] = episode['air_date'][8:10] + "-"+ episode['air_date'][5:7] + "-" +episode['air_date'][:4] 
-    
+
     character_names = episode['characters']
     for index in range(len(character_names)):
         url_character = f'{api_url}characters?name={character_names[index].replace(" ","+")}' 
@@ -95,8 +116,11 @@ def episodes(request):
 
 def character(request, question_id):
     url = f'{api_url}characters/{question_id}/'
-    print(url)
-    response = requests.get(url).json()
+    response = requests.get(url).json()[0]
+    
+    response['occupation'] = array_to_string(response['occupation'])
+    response['category'] = array_to_string(response['category'])
+    print(response['occupation'])
     context = {"character": response}
     return render(request, 'wiki/character.html', context)
 

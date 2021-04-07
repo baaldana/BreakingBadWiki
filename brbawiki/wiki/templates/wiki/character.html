@@ -1,6 +1,30 @@
 <html>
-    <title>BrBa Character</title>
+    <title>Brba Character</title>
     <body>
-        <p>{{character}}</p>
+        <h2>{{character.name}} , AKA {{character.nickname}} </h2>
+        <ul>
+            <li>Portrayed by: {{character.portrayed}}</li>
+            <li>Ocupation: {{character.occupation}}</li>
+            <li>Status: {{character.status}}</li>
+            <li>Appears in: {{character.category}}</li>
+
+            {% if character.appearance %}
+            <li> Appearances in Breaking Bad:</li>
+            <ul>
+                {% for season in character.appearance%}
+                <li><a href="/brba-seasons/{{ season }}/">Season {{season}}.</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if character.better_call_saul_appearance %}
+            <li> Appearances in Better Call Saul:</li>
+            <ul>
+                {% for season in character.better_call_saul_appearance %}
+                <li><a href="/bcs-seasons/{{ season }}/">Season {{season}}.</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </ul>
+        <img src={{character.img}} alt="No image available.">
     </body>
 </html>
