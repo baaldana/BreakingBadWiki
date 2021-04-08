@@ -1,1 +1,1 @@
-web: gunicorn brbawiki.wsgi --log-file -
+web: gunicorn brbawiki.wsgi
