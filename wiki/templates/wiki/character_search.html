@@ -4,7 +4,7 @@
         <h1>Search Results:</h1>
         <ul>
         {% for character in search_results %}
-        <li><a href='/characters/{{ character.1 }}'>{{character.name}}</a> , AKA {{character.nickname}} </li>
+        <li><a href='/characters/{{ character.char_id }}'>{{character.name}}</a> , AKA {{character.nickname}} </li>
         {% endfor %}
         </ul>
     </body>
