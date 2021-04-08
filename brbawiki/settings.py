@@ -15,8 +15,7 @@ import environ
 
 import django_heroku
 
-# Activate Django-Heroku
-django_heroku.settings(locals())
+
 
 # Initialise environment variables
 env = environ.Env()
@@ -140,3 +139,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
+
+
+# Activate Django-Heroku
+django_heroku.settings(locals())
