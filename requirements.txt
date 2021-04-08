@@ -10,7 +10,6 @@ crayons==0.4.0
 cryptography==2.1.4
 Django==1.11.29
 enum34==1.1.6
-gyp==0.1
 html5lib==1.1
 idna==2.10
 ipaddress==1.0.17
