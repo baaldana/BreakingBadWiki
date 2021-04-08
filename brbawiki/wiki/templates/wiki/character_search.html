@@ -1,0 +1,11 @@
+<html>
+    <title>Brba Character</title>
+    <body>
+        <h1>Search Results:</h1>
+        <ul>
+        {% for character in search_results %}
+        <li><a href='/characters/{{ character.1 }}'>{{character.name}}</a> , AKA {{character.nickname}} </li>
+        {% endfor %}
+        </ul>
+    </body>
+</html>

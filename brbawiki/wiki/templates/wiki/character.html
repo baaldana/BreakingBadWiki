@@ -9,7 +9,7 @@
             <li>Appears in: {{character.category}}</li>
 
             {% if character.appearance %}
-            <li> Appearances in Breaking Bad:</li>
+            <li>Appearances in Breaking Bad:</li>
             <ul>
                 {% for season in character.appearance%}
                 <li><a href="/brba-seasons/{{ season }}/">Season {{season}}.</a></li>
@@ -17,13 +17,19 @@
             </ul>
             {% endif %}
             {% if character.better_call_saul_appearance %}
-            <li> Appearances in Better Call Saul:</li>
+            <li>Appearances in Better Call Saul:</li>
             <ul>
                 {% for season in character.better_call_saul_appearance %}
                 <li><a href="/bcs-seasons/{{ season }}/">Season {{season}}.</a></li>
                 {% endfor %}
             </ul>
             {% endif %}
+            <li>Quotes:</li>
+            <ul>
+                {% for quote in quotes %}
+                <li>"{{quote.quote}}".</li>
+                {% endfor %}
+            </ul>
         </ul>
         <img src={{character.img}} alt="No image available.">
     </body>
