@@ -16,7 +16,6 @@ ipaddress==1.0.17
 keyring==10.6.0
 keyrings.alt==3.0
 lxml==4.6.2
-poster==0.8.1
 pytz==2021.1
 pyxdg==0.25
 requests==2.25.1
