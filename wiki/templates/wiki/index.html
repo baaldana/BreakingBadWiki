@@ -6,18 +6,32 @@
     {% include "wiki/menu.html" %}
 
     <body>
-        <h1>Breaking Bad Seasons</h1>
-        <ul>
-            {% for season in brba_seasons %}
-                <li><a href="/brba-seasons/{{ season }}/">Season {{season}}.</a></li>
-            {% endfor %}
-        </ul>
-        
-        <h1>Better Call Saul Seasons</h1>
-        <ul>
-            {% for season in bcs_seasons %}
-                <li><a href="/bcs-seasons/{{ season }}/">Season {{season}}.</a></li>
-            {% endfor %}
-        </ul>
+            <table>
+                <tr>
+                    <th>
+                    <h3>Breaking Bad Seasons</h3>
+                    </th>
+                    <th>
+                    <h3>Better Call Saul Seasons</h3>
+                    </th>
+                    
+                </tr>
+                <tr>
+                    <td id='brba-td'>
+                        <ul>
+                            {% for season in brba_seasons %}
+                                <li><a href="/brba-seasons/{{ season }}/">Season {{season}}.</a></li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td id='bcs-td'>
+                    <ul>
+                        {% for season in bcs_seasons %}
+                            <li><a href="/bcs-seasons/{{ season }}/">Season {{season}}.</a></li>
+                        {% endfor %}
+                    </ul>
+                    </td>
+                </tr>
+            </table>
     </body>
 </html>

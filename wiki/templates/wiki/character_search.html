@@ -6,7 +6,7 @@
         <h1>Search Results:</h1>
         <ul>
         {% for character in search_results %}
-        <li><a href='/characters/{{ character.char_id }}'>{{character.name}}</a> , AKA {{character.nickname}} </li>
+        <li><a href='/characters/{{ character.char_id }}'>{{character.name}}, AKA {{character.nickname}}</a></li>
         {% endfor %}
         </ul>
     </body>

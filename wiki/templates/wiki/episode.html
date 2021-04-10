@@ -1,12 +1,16 @@
 <html>
     <title>Episode</title>
     {% include "wiki/menu.html" %}
-
-    <h2>{{episode.series}} S{{episode.season}}E{{episode.episode}} | {{episode.title}}</h2>
-    <p>Air Date: {{episode.air_date}}</p>
-    <ul>
+    <body>
+        <h2>{{episode.series}} S{{episode.season}}E{{episode.episode}} | {{episode.title}}</h2>
+        <p>Air Date (DD-MM-YYYY): {{episode.air_date}}</p>
+        <p>Character appearances in this episode:</p>
+        <ul>
         {% for character in episode.characters %}
             <li><a href='/characters/{{ character.1 }}'>{{character.0}}</a></li>
         {% endfor %}
-    </ul>
+        </ul>
+    </body>
+
+    
 </html>

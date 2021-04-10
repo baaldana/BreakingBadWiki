@@ -1,8 +1,22 @@
 <html>
-    <h1><a href='/'>Breaking Bad Universe Wiki by baaldana</a></h1>
-    <form action={% url 'character_search' %} method="POST"> 
-        {% csrf_token %}
-        <input  id='search_string' type='text' name='search_string' maxlength="50" required>
-        <input type="submit" value="Search">
-    </form>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'wiki/style.css' %}">
+
+    <table class='nav-bar'>
+        <tr>
+            <th>    
+                <h1><a href='/'>Breaking Bad Universe Wiki</a></h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <form id='search_form' action={% url 'character_search' %} method="POST"> 
+                    {% csrf_token %}
+                    <input  id='search_string' placeholder="Search a character.." type='text' name='search_string' maxlength="50" required>
+                    <input type="submit" value="Search">
+                </form>
+            </td>
+        </tr>
+    </table>
+    
 </html>

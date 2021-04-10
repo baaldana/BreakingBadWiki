@@ -1,0 +1,137 @@
+/* General Styling */
+
+
+body {
+    background-image:url('https://i.pinimg.com/originals/8b/c6/f1/8bc6f138c346c3552f98c481f72c2923.png');
+    background-position: center; /* Center the image */
+    height: 1000px; /* You must set a specified height */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    font-family: Garamond, serif;
+    text-align: center;
+    
+}
+
+.nav-bar {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-bar th {
+    margin-inline: 40px
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+h1 {
+    color: black;
+    text-transform: uppercase;
+}
+
+h1 a:visited {
+    color: black;
+}
+
+h2 {
+    color: black;
+    text-transform: uppercase;
+    background-color: white;
+    opacity: 0.9;
+}
+
+p {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: red
+}
+
+/* Table Styling */
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#brba-td {
+    height: auto;
+    width: auto;
+    background-image: url('https://www.formulatv.com/images/series/0000/229-f.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#brba-td li {
+    margin: 20px;
+    background-color: black;
+    opacity: 0.8;
+}
+
+#bcs-td {
+    size: 30px;
+    background-image: url('https://www.liverarte.com/wp-content/uploads/2019/04/BETTER-CALL-SAUL-.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#bcs-td li {
+    margin: 20px;
+    opacity: 0.8;
+    background-color: black;
+}
+
+tr {
+    text-align: center;
+}
+
+th {
+    color: white;
+    text-align: center;
+    margin-inline: 30px ;
+}
+
+th h3 {
+    opacity: 0.8;
+    background-color: black;
+}
+
+td ul {
+    text-align: center;
+}
+
+td ul li {
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    color: white;
+    text-align: center;
+}
+
+li a {
+    color:white ;
+}
+
+input {
+    color: white;
+    background-color: black;
+}
+
+
