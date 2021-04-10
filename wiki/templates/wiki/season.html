@@ -1,6 +1,13 @@
-<h1>{{series}} Season {{season}}</h1>
+<html>
+    {% include "wiki/menu.html" %}
+
+    <body>
+        <h1>{{series}} Season {{season}}</h1>
         <ul>
             {% for episode in season_episodes %}
                 <li><a href="/episodes/{{ episode.episode_id }}/">Episode {{episode.episode}}: {{episode.title}}.</a></li>
             {% endfor %}
         </ul>
+    </body>
+</html>
+    

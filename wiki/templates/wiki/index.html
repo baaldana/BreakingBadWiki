@@ -3,11 +3,7 @@
         <meta charset="utf-8">
         <title>BrBa Wiki</title>
     </head>
-    <form action={% url 'character_search' %} method="POST"> 
-        {% csrf_token %}
-        <input  id='search_string' type='text' name='search_string' maxlength="50" required>
-        <input type="submit" value="Search">
-    </form>
+    {% include "wiki/menu.html" %}
 
     <body>
         <h1>Breaking Bad Seasons</h1>

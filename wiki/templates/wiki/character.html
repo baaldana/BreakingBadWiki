@@ -1,5 +1,7 @@
 <html>
     <title>Brba Character</title>
+    {% include "wiki/menu.html" %}
+
     <body>
         <h2>{{character.name}} , AKA {{character.nickname}} </h2>
         <ul>
@@ -24,12 +26,14 @@
                 {% endfor %}
             </ul>
             {% endif %}
+            {% if quotes %}
             <li>Quotes:</li>
             <ul>
                 {% for quote in quotes %}
                 <li>"{{quote.quote}}".</li>
                 {% endfor %}
             </ul>
+            {% endif %}
         </ul>
         <img src={{character.img}} alt="No image available.">
     </body>
